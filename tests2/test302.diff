@@ -1,0 +1,19 @@
+1,18d0
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  false
+< TYPE - Exp -> ID/Call/NUM ...  bool
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  false
+< TYPE - Exp -> ID/Call/NUM ...  bool
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Exp -> Exp OP Exp  
+< Operation - Exp -> Exp OP Exp  MULTIPLICATIVE

@@ -1,0 +1,26 @@
+1,25d0
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  true
+< TYPE - Exp -> ID/Call/NUM ...  bool
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  3
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Statement -> Type ID ASSIGN Exp SC 
+< ID = x
+< OUT - Statement -> Type ID ASSIGN Exp SC 

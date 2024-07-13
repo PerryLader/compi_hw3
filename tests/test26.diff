@@ -1,0 +1,314 @@
+1,254d0
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  true
+< TYPE - Exp -> ID/Call/NUM ...  bool
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< IN - Statement -> Type ID ASSIGN Exp SC 
+< ID = BOOL
+< OUT - Statement -> Type ID ASSIGN Exp SC 
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  false
+< TYPE - Exp -> ID/Call/NUM ...  bool
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< IN - Statement -> Type ID ASSIGN Exp SC 
+< ID = Bool
+< OUT - Statement -> Type ID ASSIGN Exp SC 
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  true
+< TYPE - Exp -> ID/Call/NUM ...  bool
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  false
+< TYPE - Exp -> ID/Call/NUM ...  bool
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< IN - Exp -> Exp OP Exp  
+< Operation - Exp -> Exp OP Exp  AND
+< TYPE - Exp -> Exp OP Exp  bool
+< OUT - Exp -> Exp OP Exp  
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  true
+< TYPE - Exp -> ID/Call/NUM ...  bool
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  false
+< TYPE - Exp -> ID/Call/NUM ...  bool
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< IN - Exp -> Exp OP Exp  
+< Operation - Exp -> Exp OP Exp  OR
+< TYPE - Exp -> Exp OP Exp  bool
+< OUT - Exp -> Exp OP Exp  
+< Node
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  false
+< TYPE - Exp -> ID/Call/NUM ...  bool
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  1
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  2
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Exp -> Exp OP Exp  
+< Operation - Exp -> Exp OP Exp  RELATIONAL
+< TYPE - Exp -> Exp OP Exp  bool
+< OUT - Exp -> Exp OP Exp  
+< Node
+< IN - Exp -> Exp OP Exp  
+< Operation - Exp -> Exp OP Exp  AND
+< TYPE - Exp -> Exp OP Exp  bool
+< OUT - Exp -> Exp OP Exp  
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  1
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  2
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Exp -> Exp OP Exp  
+< Operation - Exp -> Exp OP Exp  RELATIONAL
+< TYPE - Exp -> Exp OP Exp  bool
+< OUT - Exp -> Exp OP Exp  
+< Node
+< IN - Exp -> Exp OP Exp  
+< Operation - Exp -> Exp OP Exp  AND
+< TYPE - Exp -> Exp OP Exp  bool
+< OUT - Exp -> Exp OP Exp  
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  1
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  2
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Exp -> Exp OP Exp  
+< Operation - Exp -> Exp OP Exp  RELATIONAL
+< TYPE - Exp -> Exp OP Exp  bool
+< OUT - Exp -> Exp OP Exp  
+< Node
+< IN - Exp -> Exp OP Exp  
+< Operation - Exp -> Exp OP Exp  AND
+< TYPE - Exp -> Exp OP Exp  bool
+< OUT - Exp -> Exp OP Exp  
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  1
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  2
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Exp -> Exp OP Exp  
+< Operation - Exp -> Exp OP Exp  RELATIONAL
+< TYPE - Exp -> Exp OP Exp  bool
+< OUT - Exp -> Exp OP Exp  
+< Node
+< IN - Exp -> Exp OP Exp  
+< Operation - Exp -> Exp OP Exp  AND
+< TYPE - Exp -> Exp OP Exp  bool
+< OUT - Exp -> Exp OP Exp  
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  1
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  2
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Exp -> Exp OP Exp  
+< Operation - Exp -> Exp OP Exp  EQUALITY
+< TYPE - Exp -> Exp OP Exp  bool
+< OUT - Exp -> Exp OP Exp  
+< Node
+< IN - Exp -> Exp OP Exp  
+< Operation - Exp -> Exp OP Exp  AND
+< TYPE - Exp -> Exp OP Exp  bool
+< OUT - Exp -> Exp OP Exp  
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  1
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  2
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Exp -> Exp OP Exp  
+< Operation - Exp -> Exp OP Exp  EQUALITY
+< TYPE - Exp -> Exp OP Exp  bool
+< OUT - Exp -> Exp OP Exp  
+< Node
+< IN - Exp -> Exp OP Exp  
+< Operation - Exp -> Exp OP Exp  AND
+< TYPE - Exp -> Exp OP Exp  bool
+< OUT - Exp -> Exp OP Exp  
+< Node
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  1
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Statement -> Type ID ASSIGN Exp SC 
+< ID = x
+< OUT - Statement -> Type ID ASSIGN Exp SC 
+< Node
+< Node
+< Node
+< IN - Statement -> RETURN SC / Break SC / Continute SC 
+< OUT - Statement -> RETURN SC / Break SC / Continute SC
+< Node
+258d3
+< Node
+261,279d5
+< Node
+< Node
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  3
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Statement -> Type ID ASSIGN Exp SC 
+< ID = y
+< OUT - Statement -> Type ID ASSIGN Exp SC 
+< Node
+283,318d8
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  BOOL
+< TYPE - Exp -> ID/Call/NUM ...  bool
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< Node
+< IN - Statement -> RETURN SC / Break SC / Continute SC 
+< OUT - Statement -> RETURN SC / Break SC / Continute SC
+< Node
+< Node
+< Node
+< IN - Statement -> RETURN SC / Break SC / Continute SC 
+< OUT - Statement -> RETURN SC / Break SC / Continute SC
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  5
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Statement -> Type ID ASSIGN Exp SC 
+< Expected Type: bool
+< Actual Type: int

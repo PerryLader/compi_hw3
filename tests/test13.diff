@@ -1,0 +1,48 @@
+1,47d0
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  "print"
+< TYPE - Exp -> ID/Call/NUM ...  string
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< IN - CALL -> ID LPAREN Exp RPAREN  
+< VALUE - CALL -> ID LPAREN Exp RPAREN  print
+< TYPE - CALL -> ID LPAREN Exp RPAREN void
+< OUT - CALL -> ID LPAREN Exp RPAREN  
+< Node
+< Node
+< IN - Statement -> Call SC 
+< OUT - Statement -> Call SC 
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  "print"
+< TYPE - Exp -> ID/Call/NUM ...  string
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< IN - CALL -> ID LPAREN Exp RPAREN  
+< VALUE - CALL -> ID LPAREN Exp RPAREN  print
+< TYPE - CALL -> ID LPAREN Exp RPAREN void
+< OUT - CALL -> ID LPAREN Exp RPAREN  
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  print
+< TYPE - Exp -> ID/Call/NUM ...  void
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< IN - Statement -> Type ID ASSIGN Exp SC 
+< Expected Type: int
+< Actual Type: void

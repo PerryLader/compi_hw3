@@ -1,0 +1,17 @@
+1,16d0
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  5
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Statement -> Type ID ASSIGN Exp SC 
+< Expected Type: bool
+< Actual Type: int

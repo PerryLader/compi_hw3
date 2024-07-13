@@ -1,0 +1,32 @@
+1,31d0
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  1
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - CALL -> ID LPAREN Exp RPAREN  
+< VALUE - CALL -> ID LPAREN Exp RPAREN  readi
+< TYPE - CALL -> ID LPAREN Exp RPAREN int
+< OUT - CALL -> ID LPAREN Exp RPAREN  
+< Node
+< Node
+< IN - Statement -> Call SC 
+< OUT - Statement -> Call SC 
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  true
+< TYPE - Exp -> ID/Call/NUM ...  bool
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< Type
+< Node

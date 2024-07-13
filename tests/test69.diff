@@ -1,0 +1,77 @@
+1,76d0
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  200
+< TYPE - Exp -> ID/Call/NUM ...  byte
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  200
+< TYPE - Exp -> ID/Call/NUM ...  byte
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< IN - Exp -> Exp OP Exp  
+< Operation - Exp -> Exp OP Exp  ADDITIVE
+< TYPE - Exp -> Exp OP Exp  byte
+< OUT - Exp -> Exp OP Exp  
+< Node
+< IN - Statement -> Type ID ASSIGN Exp SC 
+< ID = x
+< OUT - Statement -> Type ID ASSIGN Exp SC 
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  0
+< TYPE - Exp -> ID/Call/NUM ...  byte
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< IN - Statement -> Type ID ASSIGN Exp SC 
+< ID = y
+< OUT - Statement -> Type ID ASSIGN Exp SC 
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  2
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  1
+< TYPE - Exp -> ID/Call/NUM ...  byte
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< IN - Exp -> Exp OP Exp  
+< Operation - Exp -> Exp OP Exp  ADDITIVE
+< TYPE - Exp -> Exp OP Exp  int
+< OUT - Exp -> Exp OP Exp  
+< Node
+< IN - Statement -> Type ID ASSIGN Exp SC 
+< Expected Type: byte
+< Actual Type: int

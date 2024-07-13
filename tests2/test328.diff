@@ -1,0 +1,31 @@
+1,17d0
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  true
+< TYPE - Exp -> ID/Call/NUM ...  bool
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< IN - Statement -> Type ID SC 
+< OUT - Statement -> Type ID SC 
+20,31d2
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  3
+< TYPE - Exp -> ID/Call/NUM ...  byte
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< IN - Statement -> ID ASSIGN Exp SC  

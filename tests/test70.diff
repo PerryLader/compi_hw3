@@ -1,0 +1,58 @@
+1,57d0
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  125124
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Statement -> Type ID ASSIGN Exp SC 
+< ID = g
+< OUT - Statement -> Type ID ASSIGN Exp SC 
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  g
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Exp -> LPAREN Type RPAREN Exp  
+< VALUE - Exp -> LPAREN Type RPAREN Exp  g
+< TYPE - Exp -> LPAREN Type RPAREN Exp  byte
+< OUT - Exp -> LPAREN Type RPAREN Exp  
+< Node
+< IN - Statement -> Type ID ASSIGN Exp SC 
+< ID = f
+< OUT - Statement -> Type ID ASSIGN Exp SC 
+< Node
+< Node
+< Node
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  "hello world"
+< TYPE - Exp -> ID/Call/NUM ...  string
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Exp -> LPAREN Type RPAREN Exp  

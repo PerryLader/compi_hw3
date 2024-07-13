@@ -1,0 +1,119 @@
+%{
+    
+    #include "Symtab.hpp"
+    #include "utility.hpp"
+    #include "hw3_output.hpp"
+    #define YYSTYPE Node*
+    extern int yylex();
+    extern int yylineno;
+    using namespace output;
+    void yyerror(const char*); 
+    
+    
+
+    
+
+    Stacks stacks;
+    int whileCounter = 0;
+%}
+
+%nonassoc LOW_PREC_PAREN_EXP
+
+%token INT BYTE BOOL
+%token TRUE FALSE
+%token BREAK CONTINUE
+%token RETURN
+%token STRING
+%token WHILE
+%token IF
+
+%nonassoc NUM
+%nonassoc B
+
+%nonassoc ID
+%nonassoc SC
+
+%right ASSIGN
+%left OR
+%left AND
+%left EQUALORNOT 
+%left RELOP 
+%left MINUS_PLUS 
+%left DIV_MUL 
+%right NOT
+%left LPAREN RPAREN
+%left LBRACE RBRACE
+
+%nonassoc ELSE
+
+%nonassoc Max_Priority
+
+%%
+
+Program: Statements {
+   ;};
+
+Statements:
+    Statement {;}
+     | Statements Statement {;};
+
+Statement:
+    Type ID ASSIGN Exp SC {stacks.addSymbol($1->value, $2->value, dynamic_cast<Expression*>($4));}
+    | IF LPAREN BoolExp RPAREN AddScope Statement CloseScope {;}
+    | RETURN SC {;}
+    | Type ID SC {stacks.addSymbol($1->value, $2->value);}
+    | IF LPAREN BoolExp RPAREN AddScope Statement CloseScope ELSE AddScope Statement CloseScope {;}
+    |  LBRACE AddScope Statements RBRACE CloseScope {;}
+    | WHILE LPAREN BoolExp RPAREN {whileCounter++;} AddScope {;} Statement {whileCounter--;} CloseScope {;}
+    | ID ASSIGN Exp SC {stacks.assignToSymbol($1->value, dynamic_cast<Expression*>($3));}
+    | Call SC %prec Max_Priority {;}
+
+    | BREAK SC {checkBreakInWhile(whileCounter);}
+    | CONTINUE SC {checkContinueInWhile(whileCounter);}
+;
+AddScope:              {stacks.addNewScope();}
+
+CloseScope:            {stacks.popAndPrintScope();}
+
+BoolExp:        Exp {checkBool(dynamic_cast<Expression*>($1)); $$ = $1;}
+
+Call: ID LPAREN Exp RPAREN {$$ = parseFunc($1->value, dynamic_cast<Expression*>($3));};
+
+Type:
+    INT {$$ = new Type("int");}
+    | BYTE {$$ = new Type("byte");}
+    | BOOL {$$ = new Type("bool");}
+;
+
+Exp:  LPAREN Exp RPAREN %prec LOW_PREC_PAREN_EXP {$$ = $2;}
+     | Exp MINUS_PLUS Exp {$$ = exprAdditive(dynamic_cast<Expression*>($1), dynamic_cast<Op*>($2), dynamic_cast<Expression*>($3));}
+     | Exp DIV_MUL Exp {$$ = exprMultiplicative(dynamic_cast<Expression*>($1), dynamic_cast<Op*>($2), dynamic_cast<Expression*>($3));}
+     | ID {$$ = exprById($1->value);}
+     | Call {$$ = exprByCall(dynamic_cast<Call*>($1));}
+     | NUM {$$ = new Expression("int", $1->value);}
+     | NUM B {checkByteLiteral($1->value); $$ = new Expression("byte", $1->value);}
+     | STRING {$$ = new Expression("string", $1->value);}
+     | TRUE {$$ = new Expression("bool", "true");}
+     | FALSE {$$ = new Expression("bool", "false");}
+     | NOT Exp {$$ = exprNot(dynamic_cast<Expression*>($2));}
+     | Exp AND Exp {$$ = exprAnd(dynamic_cast<Expression*>($1), dynamic_cast<Expression*>($3));}
+     | Exp OR Exp {$$ = exprOr(dynamic_cast<Expression*>($1), dynamic_cast<Expression*>($3));}
+     | Exp EQUALORNOT Exp {$$ = exprRelop(dynamic_cast<Expression*>($1), dynamic_cast<Op*>($2), dynamic_cast<Expression*>($3));}
+     | Exp RELOP Exp {$$ = exprRelop(dynamic_cast<Expression*>($1), dynamic_cast<Op*>($2), dynamic_cast<Expression*>($3));}
+     | LPAREN Type RPAREN Exp {$$ = exprCast(dynamic_cast<Type*>($2), dynamic_cast<Expression*>($4));}
+;
+
+
+
+%%
+
+void yyerror(const char*) {output::errorSyn(yylineno); exit(1);}
+
+int main() {
+    int ret_val = yyparse();
+    while(!stacks.symtabs.empty())
+    {
+        stacks.popAndPrintScope();
+    }
+    return ret_val;
+}

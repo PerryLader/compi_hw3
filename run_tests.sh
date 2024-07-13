@@ -7,26 +7,41 @@ NC='\033[0m' # No Color
 
 # Directory containing the tests
 TEST_DIR="tests"
-./run.sh
-# Iterate over all test input files
-for test_input in $TEST_DIR/*.in; do
-    test_number=$(basename "$test_input" .in)
-    test_output="${TEST_DIR}/${test_number}.out"
-    test_result="${TEST_DIR}/${test_number}.res"
-    test_diff="${TEST_DIR}/${test_number}.diff"
+
+echo "----------------- Starting tests -----------------"
+
+# Function to run tests and compare results
+run_tests() {
+    local test_dir="$1"
     
-    # Run the test
-    touch "$test_result"
-    ./hw2.out < "$test_input" >& "$test_result"
-    
-    # Compare the results
-    if diff "$test_result" "$test_output" > /dev/null; then
-        echo -e "Test ${test_number} ${GREEN}PASSED${NC}"
-    else
-        echo -e "Test ${test_number} ${RED}FAILED${NC}"
-        touch "$test_diff"
-        diff "$test_result" "$test_output" > $test_diff
+    # Iterate over all test input files
+    for test_input in "$test_dir"/*.in; do
+        test_number=$(basename "$test_input" .in)
+        test_output="${test_dir}/${test_number}.out"
+        test_result="${test_dir}/${test_number}.in.res"
+        test_diff="${test_dir}/${test_number}.diff"
         
-    fi
-done
-rm -f parser.tab.* lex.yy.c hw2.out
+        # Run the test
+        ./hw3.out < "$test_input" > "$test_result"  # Redirect stdout only
+        
+        # Compare the results
+        if diff "$test_result" "$test_output" > /dev/null; then
+            echo -e "Test ${test_number} ${GREEN}PASSED${NC}"
+        else
+            echo -e "Test ${test_number} ${RED}FAILED${NC}"
+            diff "$test_result" "$test_output" > "$test_diff"
+        fi
+    done
+}
+
+# Run tests for TEST_DIR
+run_tests "$TEST_DIR"
+
+# Directory containing additional tests
+TEST_DIR2="tests2"
+
+echo "----------------- Starting tests2 -----------------"
+
+# Run tests for TEST_DIR2
+
+#run_tests "$TEST_DIR2"

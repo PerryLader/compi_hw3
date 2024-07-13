@@ -1,0 +1,20 @@
+1,19d0
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  3
+< TYPE - Exp -> ID/Call/NUM ...  byte
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< IN - CALL -> ID LPAREN Exp RPAREN  
+< VALUE - CALL -> ID LPAREN Exp RPAREN  readi
+< TYPE - CALL -> ID LPAREN Exp RPAREN int
+< OUT - CALL -> ID LPAREN Exp RPAREN  
+< Node
+< Node
+< IN - Statement -> Call SC 
+< OUT - Statement -> Call SC 

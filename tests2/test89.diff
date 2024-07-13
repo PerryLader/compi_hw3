@@ -1,0 +1,4 @@
+1c1
+< line 1: type mismatch
+---
+> line 1: variable a is not defined

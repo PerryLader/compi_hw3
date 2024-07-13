@@ -1,0 +1,22 @@
+1,21d0
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< IN - Statement -> Type ID SC 
+< OUT - Statement -> Type ID SC 
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  3
+< TYPE - Exp -> ID/Call/NUM ...  byte
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< IN - Statement -> ID ASSIGN Exp SC  
+< OUT - Statement -> ID ASSIGN Exp SC  

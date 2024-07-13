@@ -9,7 +9,6 @@ extern int yylineno;
 class Node{
 public:
     std::string value;
-    
     Node(const std::string& value){
         this->value = value;
     }

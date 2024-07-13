@@ -1,0 +1,24 @@
+1,23d0
+< Node
+< Node
+< Node
+< Node
+< Node
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  216
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Exp -> LPAREN Type RPAREN Exp  
+< VALUE - Exp -> LPAREN Type RPAREN Exp  216
+< TYPE - Exp -> LPAREN Type RPAREN Exp  byte
+< OUT - Exp -> LPAREN Type RPAREN Exp  
+< Node
+< IN - CALL -> ID LPAREN Exp RPAREN  

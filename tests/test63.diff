@@ -1,0 +1,9 @@
+1,8d0
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  "Hello"
+< TYPE - Exp -> ID/Call/NUM ...  string
+< OUT - Exp -> ID/Call/NUM ...  

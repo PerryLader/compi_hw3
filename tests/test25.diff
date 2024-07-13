@@ -1,0 +1,46 @@
+1,45d0
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< IN - Statement -> Type ID SC 
+< OUT - Statement -> Type ID SC 
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< IN - Statement -> Type ID SC 
+< OUT - Statement -> Type ID SC 
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  1
+< TYPE - Exp -> ID/Call/NUM ...  byte
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< IN - Statement -> Type ID ASSIGN Exp SC 
+< ID = Byte
+< OUT - Statement -> Type ID ASSIGN Exp SC 
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  1
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  

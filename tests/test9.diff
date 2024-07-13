@@ -1,0 +1,148 @@
+1,36d0
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  false
+< TYPE - Exp -> ID/Call/NUM ...  bool
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  4
+< TYPE - Exp -> ID/Call/NUM ...  byte
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Exp -> LPAREN Type RPAREN Exp  
+< VALUE - Exp -> LPAREN Type RPAREN Exp  4
+< TYPE - Exp -> LPAREN Type RPAREN Exp  int
+< OUT - Exp -> LPAREN Type RPAREN Exp  
+< Node
+< Node
+< IN - Statement -> Type ID ASSIGN Exp SC 
+< ID = a
+< OUT - Statement -> Type ID ASSIGN Exp SC 
+39,73d2
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  false
+< TYPE - Exp -> ID/Call/NUM ...  bool
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  4
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Exp -> LPAREN Type RPAREN Exp  
+< VALUE - Exp -> LPAREN Type RPAREN Exp  4
+< TYPE - Exp -> LPAREN Type RPAREN Exp  byte
+< OUT - Exp -> LPAREN Type RPAREN Exp  
+< Node
+< IN - Statement -> Type ID ASSIGN Exp SC 
+< ID = c
+< OUT - Statement -> Type ID ASSIGN Exp SC 
+76,113d4
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  false
+< TYPE - Exp -> ID/Call/NUM ...  bool
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  4
+< TYPE - Exp -> ID/Call/NUM ...  byte
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Exp -> LPAREN Type RPAREN Exp  
+< VALUE - Exp -> LPAREN Type RPAREN Exp  4
+< TYPE - Exp -> LPAREN Type RPAREN Exp  byte
+< OUT - Exp -> LPAREN Type RPAREN Exp  
+< Node
+< Node
+< IN - Statement -> Type ID ASSIGN Exp SC 
+< Expected Type: int
+< Actual Type: byte
+< ID = d
+< OUT - Statement -> Type ID ASSIGN Exp SC 
+116,150d6
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  false
+< TYPE - Exp -> ID/Call/NUM ...  bool
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  4
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Exp -> LPAREN Type RPAREN Exp  
+< VALUE - Exp -> LPAREN Type RPAREN Exp  4
+< TYPE - Exp -> LPAREN Type RPAREN Exp  int
+< OUT - Exp -> LPAREN Type RPAREN Exp  
+< Node
+< IN - Statement -> Type ID ASSIGN Exp SC 
+< Expected Type: byte
+< Actual Type: int

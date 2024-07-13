@@ -1,0 +1,28 @@
+1,27d0
+< Node
+< Node
+< Node
+< IN - Statement -> RETURN SC / Break SC / Continute SC 
+< OUT - Statement -> RETURN SC / Break SC / Continute SC
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  2
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  5
+< TYPE - Exp -> ID/Call/NUM ...  int
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< IN - Exp -> Exp OP Exp  
+< Operation - Exp -> Exp OP Exp  AND

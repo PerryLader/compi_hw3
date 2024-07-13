@@ -1,0 +1,34 @@
+1,33d0
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< IN - Statement -> Type ID SC 
+< OUT - Statement -> Type ID SC 
+< Node
+< Node
+< Type
+< Node
+< Node
+< Node
+< IN - Statement -> Type ID SC 
+< OUT - Statement -> Type ID SC 
+< Node
+< Node
+< Node
+< IN - Statement -> RETURN SC / Break SC / Continute SC 
+< OUT - Statement -> RETURN SC / Break SC / Continute SC
+< Node
+< Node
+< Node
+< Node
+< Node
+< IN - Exp -> ID/Call/NUM ...  
+< VALUE - Exp -> ID/Call/NUM ...  "d"
+< TYPE - Exp -> ID/Call/NUM ...  string
+< OUT - Exp -> ID/Call/NUM ...  
+< Node
+< Node
+< IN - Statement -> ID ASSIGN Exp SC  
