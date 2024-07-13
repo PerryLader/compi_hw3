@@ -1,0 +1,7 @@
+1c1,4
+< ./run_tests.sh: line 19: ./hw1.out: No such file or directory
+---
+> 26: Exp -> TRUE
+> 24: Exp -> NUM B
+> 20: Exp -> Exp BINOP Exp
+> line 10: syntax error

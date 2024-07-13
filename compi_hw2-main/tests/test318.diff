@@ -1,0 +1,26 @@
+2,24c2
+< 25: Exp -> STRING
+< 30: Exp -> Exp OR Exp
+< 7: Statement -> ID ASSIGN Exp SC
+< 2: Statements -> Statement
+< 27: Exp -> FALSE
+< 23: Exp -> NUM
+< 15: Call -> ID LPAREN Exp RPAREN
+< 22: Exp -> Call
+< 21: Exp -> ID
+< 31: Exp -> Exp RELOP Exp
+< 19: Exp -> LPAREN Exp RPAREN
+< 20: Exp -> Exp BINOP Exp
+< 25: Exp -> STRING
+< 30: Exp -> Exp OR Exp
+< 24: Exp -> NUM B
+< 26: Exp -> TRUE
+< 19: Exp -> LPAREN Exp RPAREN
+< 20: Exp -> Exp BINOP Exp
+< 19: Exp -> LPAREN Exp RPAREN
+< 7: Statement -> ID ASSIGN Exp SC
+< 10: Statement -> IF LPAREN Exp RPAREN Statement
+< 3: Statements -> Statements Statement
+< line 14: syntax error
+---
+> line 1: lexical error

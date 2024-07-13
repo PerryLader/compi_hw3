@@ -1,0 +1,121 @@
+%{
+    #define YYSTYPE Node*
+    #include "hw3_output.hpp"
+    using namespace output;
+    
+    extern int yylex();
+    void yyerror(const char*);
+    extern int yylineno;
+
+    #include "Symtab.hpp"
+    #include "utility.hpp"
+
+    Stacks stacks;
+    int whileCounter = 0;
+%}
+
+/* prec to solve shift/reduce Exp -> LPAREN Exp RPARENT vs. Statement/Call -> *** LPAREN Exp RPAREN *** (prefer shifting over reduce-19) */
+%nonassoc LOW_PREC_PAREN_EXP
+
+/* No ambiguity in these tokens */
+%token INT BYTE BOOL
+%token TRUE FALSE
+%token BREAK CONTINUE
+%token RETURN
+%token STRING
+%token WHILE
+%token IF
+
+/* Put B below NUM to solve shift/reduce with Exp -> NUM vs. Exp -> NUM B (prefer shift-B over reduce-23) */
+%nonassoc NUM
+%nonassoc B
+
+/* Put SC and RPAREN below ID to solve shift/reduce with Exp -> ID vs. Statement -> *** ID *** SC and Call -> ID LPAREN Exp RPAREN (prefer shift-*** over reduce-21) */
+%nonassoc ID
+%nonassoc SC
+
+/* From operator presedence table */
+%right ASSIGN
+%left OR
+%left AND
+%left EQUALITY /* == or != */
+%left RELATIONAL /* > or >= or < or <= */
+%left ADDITIVE /* + or - */
+%left MULTIPLICATIVE /* * or / */
+%right NOT
+%left LPAREN RPAREN
+%left LBRACE RBRACE
+
+/* Put ELSE below RPAREN to solve Dangling-Else problem (prefer shift-ELSE over reduce-10) */
+%nonassoc ELSE
+
+/* prec to solve shift/reduce Exp -> Call vs. Statement -> Call SC (prefer shift-SC over reduce-22) */
+%nonassoc HIGH_PREC_CALL
+%%
+
+Program:   Statements {;}
+;
+
+Statements:     Statement {;}
+                | Statements Statement {;}
+;
+
+Statement:      LBRACE AddScope Statements RBRACE CloseScope {;}
+                | Type ID SC {stacks.addSymbol($1->value, $2->value);}
+                | Type ID ASSIGN Exp SC {stacks.addSymbol($1->value, $2->value, dynamic_cast<Expression*>($4));}
+                | ID ASSIGN Exp SC {stacks.assignToSymbol($1->value, dynamic_cast<Expression*>($3));}
+                | Call SC %prec HIGH_PREC_CALL {;}
+                | RETURN SC {;}
+                | IF LPAREN BoolExp RPAREN AddScope Statement CloseScope {;}
+                | IF LPAREN BoolExp RPAREN AddScope Statement CloseScope ELSE AddScope Statement CloseScope {;}
+
+                | WHILE LPAREN BoolExp RPAREN {whileCounter++;} AddScope {;}
+                        Statement {whileCounter--;} CloseScope {;}
+
+                | BREAK SC {checkBreakInWhile(whileCounter);}
+                | CONTINUE SC {checkContinueInWhile(whileCounter);}
+;
+
+AddScope:              {stacks.addNewScope();}
+
+CloseScope:            {stacks.popAndPrintScope();}
+
+BoolExp:        Exp {checkBool(dynamic_cast<Expression*>($1)); $$ = $1;}
+
+Call:           ID LPAREN Exp RPAREN {$$ = parseFunc($1->value, dynamic_cast<Expression*>($3));}
+;
+
+Type:            INT {$$ = new Type("int");}
+                | BYTE {$$ = new Type("byte");}
+                | BOOL {$$ = new Type("bool");}
+;
+
+Exp:            LPAREN Exp RPAREN %prec LOW_PREC_PAREN_EXP {$$ = $2;}
+                | Exp ADDITIVE Exp {$$ = exprAdditive(dynamic_cast<Expression*>($1), dynamic_cast<Op*>($2), dynamic_cast<Expression*>($3));}
+                | Exp MULTIPLICATIVE Exp {$$ = exprMultiplicative(dynamic_cast<Expression*>($1), dynamic_cast<Op*>($2), dynamic_cast<Expression*>($3));}
+                | ID {$$ = exprById($1->value);}
+                | Call {$$ = exprByCall(dynamic_cast<Call*>($1));}
+                | NUM {$$ = new Expression("int", $1->value);}
+                | NUM B {checkByteLiteral($1->value); $$ = new Expression("byte", $1->value);}
+                | STRING {$$ = new Expression("string", $1->value);}
+                | TRUE {$$ = new Expression("bool", "true");}
+                | FALSE {$$ = new Expression("bool", "false");}
+                | NOT Exp {$$ = exprNot(dynamic_cast<Expression*>($2));}
+                | Exp AND Exp {$$ = exprAnd(dynamic_cast<Expression*>($1), dynamic_cast<Expression*>($3));}
+                | Exp OR Exp {$$ = exprOr(dynamic_cast<Expression*>($1), dynamic_cast<Expression*>($3));}
+                | Exp EQUALITY Exp {$$ = exprRelop(dynamic_cast<Expression*>($1), dynamic_cast<Op*>($2), dynamic_cast<Expression*>($3));}
+                | Exp RELATIONAL Exp {$$ = exprRelop(dynamic_cast<Expression*>($1), dynamic_cast<Op*>($2), dynamic_cast<Expression*>($3));}
+                | LPAREN Type RPAREN Exp {$$ = exprCast(dynamic_cast<Type*>($2), dynamic_cast<Expression*>($4));}
+;
+%%
+
+void yyerror(const char*) {output::errorSyn(yylineno); exit(1);}
+
+int main() {
+    int ret_val = yyparse();
+    while(!stacks.symtabs.empty())
+    {
+        stacks.popAndPrintScope();
+    }
+    return ret_val;
+}
