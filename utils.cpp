@@ -49,7 +49,7 @@ Expression* id_to_Exp(const std::string& name){
     Symbol* sym = parm_stack.findSymbol(name);
     if(sym == nullptr || isFunc(sym))
     {
-        errorUndef(yylineno, name);
+        output::errorUndef(yylineno, name);
         exit(0);
     }
     return new Expression(sym->m_type, sym->m_value);
@@ -177,7 +177,7 @@ Call* expressionToCall(const std::string& name, Expression* expr){
     Symbol* sym = parm_stack.findSymbol(name);
     if(sym == nullptr || !isFunc(sym))
     {
-        errorUndefFunc(yylineno, name);
+        output::errorUndefFunc(yylineno, name);
         exit(0);
     }
     std::string* argAndType= new std::string[2];
@@ -200,7 +200,7 @@ Call* expressionToCall(const std::string& name, Expression* expr){
     {
         std::string upper_type = std::string(argAndType[0]);
         std::transform(upper_type.begin(), upper_type.end(), upper_type.begin(), ::toupper);
-        errorPrototypeMismatch(yylineno, name, upper_type);
+        output::errorPrototypeMismatch(yylineno, name, upper_type);
         exit(0);
     }
 }

@@ -6,13 +6,14 @@
 #include <vector>
 #include "Symtab.hpp"
 #include "hw3_output.hpp"
+using namespace std;
 
 class parmStack{
     void addGlobalScope();
-    void checkType(const std::string& type, Expression* expr);
+    void checkType(const string& type, Expression* expr);
 public:
-    std::vector<Symtab*> m_symtabs;
-    std::stack<int> m_offsetsStuck;
+    vector<Symtab*> m_symtabs;
+    stack<int> m_offsetsStuck;
 
     parmStack(){
         m_offsetsStuck.push(0);
@@ -21,9 +22,9 @@ public:
 
     void addScope();
     void popAndPrintScope();
-    Symbol* addNewSymbolNoExp(const std::string& type, const std::string& name);
-    Symbol* addNewSymbolWithExp(const std::string& type, const std::string& name, Expression* value);
-    Symbol* findSymbol(const std::string& name);
-    void assignToSymbol(const std::string& name, Expression* val);
+    Symbol* addNewSymbolNoExp(const string& type, const string& name);
+    Symbol* addNewSymbolWithExp(const string& type, const string& name, Expression* value);
+    Symbol* findSymbol(const string& name);
+    void assignToSymbol(const string& name, Expression* val);
 };
 #endif

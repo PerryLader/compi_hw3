@@ -11,14 +11,14 @@ Symtab::~Symtab(){
     }
 }
 
-Symbol* Symtab::addToSymTab(const std::string& type, const std::string& name, const std::string& value, int offset){
+Symbol* Symtab::addToSymTab(const string& type, const string& name, const string& value, int offset){
     Symbol* s = nullptr;
     try{
         s = new Symbol(type, name, value, offset);
     }
-    catch(const std::exception& e){
-        std::cout << e.what() << '\n';
-        std::cout << "Type: " << type << " Name: " << name << " Value: " << value << std::endl;
+    catch(const exception& e){
+        cout << e.what() << '\n';
+        cout << "Type: " << type << " Name: " << name << " Value: " << value << endl;
         
         throw;
     }
@@ -27,7 +27,7 @@ Symbol* Symtab::addToSymTab(const std::string& type, const std::string& name, co
     return s;
 }
 
-Symbol* Symtab::addFuncToSymTab(const std::string& type, const std::string& name, const std::string& returnValue){
+Symbol* Symtab::addFuncToSymTab(const string& type, const string& name, const string& returnValue){
     Symbol* s = new Symbol(type, name, returnValue, 0);
     m_symbols.push_back(s);
     return s;

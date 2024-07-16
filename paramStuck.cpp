@@ -12,7 +12,7 @@ void parmStack::addGlobalScope() {
     symtab->addFuncToSymTab(makeFunctionType("int", "int"), "readi", "0");
 }
 
-Symbol* parmStack::findSymbol(const std::string& name){
+Symbol* parmStack::findSymbol(const  string& name){
     for(auto s : m_symtabs)
     {
         for(auto sym : s->m_symbols)
@@ -46,7 +46,7 @@ void parmStack::popAndPrintScope() {
     m_offsetsStuck.pop();
 }
 
-void parmStack::checkType(const std::string& type, Expression* expr){
+void parmStack::checkType(const  string& type, Expression* expr){
     if(expr->m_type == "byte" && type == "int")
     {
         return;
@@ -58,14 +58,14 @@ void parmStack::checkType(const std::string& type, Expression* expr){
     }
 }
 
-Symbol* parmStack::addNewSymbolNoExp(const std::string& type, const std::string& name) {
-    std::string defaultValue = type == "bool" ? "false" : "0";
+Symbol* parmStack::addNewSymbolNoExp(const  string& type, const  string& name) {
+     string defaultValue = type == "bool" ? "false" : "0";
     Symbol* symbol = addNewSymbolWithExp(type, name, new Expression(type, defaultValue));
     return symbol;
 
 }
 
-Symbol* parmStack::addNewSymbolWithExp(const std::string& sym_type, const std::string& name, Expression* value) {
+Symbol* parmStack::addNewSymbolWithExp(const  string& sym_type, const  string& name, Expression* value) {
   
     if(findSymbol(name) != nullptr)
     {
@@ -81,7 +81,7 @@ Symbol* parmStack::addNewSymbolWithExp(const std::string& sym_type, const std::s
     return symbol;
 }
 
-void parmStack::assignToSymbol(const std::string& name, Expression* val){
+void parmStack::assignToSymbol(const  string& name, Expression* val){
    
     Symbol* sym = findSymbol(name);
     if(sym == nullptr || sym->m_type[0] == '(' /* isFunc(sym) */){
