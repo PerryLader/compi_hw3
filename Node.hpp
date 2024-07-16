@@ -25,7 +25,7 @@ public:
 
     void printSymbol(){
         std::string upperType = std::string(m_type);
-        std::transform(upperType.begin(), upperType.end(), upperType.begin(), ::toupper); //convert the type to uppercase for prints
+        std::transform(upperType.begin(), upperType.end(), upperType.begin(), ::toupper); 
         output::printID(m_name, offset, upperType);
     } 
 };
