@@ -8,9 +8,9 @@ extern int yylineno;
 
 class Node{
 public:
-    std::string value;
+    std::string m_value;
     Node(const std::string& value){
-        this->value = value;
+        this->m_value = value;
     }
     virtual ~Node() = default;
 };
@@ -18,15 +18,15 @@ public:
 class Symbol : public Node {
 public:
     int offset;
-    std::string name;
-    std::string type;
+    std::string m_name;
+    std::string m_type;
     Symbol(const std::string type, const std::string& name, const std::string& value, int offset):
-        Node(value), offset(offset), name(name), type(type) {}
+        Node(value), offset(offset), m_name(name), m_type(type) {}
 
     void printSymbol(){
-        std::string upperType = std::string(type);
+        std::string upperType = std::string(m_type);
         std::transform(upperType.begin(), upperType.end(), upperType.begin(), ::toupper); //convert the type to uppercase for prints
-        output::printID(name, offset, upperType);
+        output::printID(m_name, offset, upperType);
     } 
 };
 
@@ -52,13 +52,13 @@ public:
 
 class Expression: public Node {
 public:
-    std::string type;
-    Expression(const std::string& type, const std::string& value) : Node(value), type(type){}
+    std::string m_type;
+    Expression(const std::string& type, const std::string& value) : Node(value), m_type(type){}
 };
 
 class Call: public Node {
 public:
-    std::string type;
-    Call(const std::string& type, const std::string& value) : Node(value), type(type){}
+    std::string m_type;
+    Call(const std::string& type, const std::string& value) : Node(value), m_type(type){}
 };
-#endif // _NODE_HPP
+#endif 

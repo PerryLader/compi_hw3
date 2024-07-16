@@ -1,26 +1,4 @@
-1c1,32
-< line 1: type mismatch
----
-> ---end scope---
-> ---end scope---
-> ---end scope---
-> ---end scope---
-> ---end scope---
-> ---end scope---
-> ---end scope---
-> ---end scope---
-> ---end scope---
-> ---end scope---
-> ---end scope---
-> ---end scope---
-> ---end scope---
-> ---end scope---
-> ---end scope---
-> ---end scope---
-> ---end scope---
-> ---end scope---
-> ---end scope---
-> ---end scope---
+20a21,32
 > ---end scope---
 > print (STRING)->VOID 0
 > printi (INT)->VOID 0
