@@ -8,35 +8,50 @@
 using namespace std;
 extern parmStack parm_stack;
 
-void isLegalBreak(int whileCounter);
+void isLegalToBreak(int whileCounter);
 
-void isLegalContinue(int whileCounter);
+void isLegalToCont(int whileCounter);
 
-void isBool(Expression* expr);
+void isBoolean(Expression *expr);
 
-void isLegalType(const std::string& type);
+void isLegalTypeUsage(const std::string &type);
 
-void isLegalByte(const std::string& value);
+void isLegalByte(const std::string &value);
 
-bool isFunc(Symbol* sym);
+bool bothAreTrue(Expression* left, Expression* right);
 
-Expression* id_to_Exp(const std::string& name);
+bool oneIsTrue(Expression* left, Expression* right);
 
-Expression* call_to_Exp(Call* call);
+bool isFunc(Symbol *sym);
 
-Expression* Not(Expression* expr);
-Expression* And(Expression* left, Expression* right);
+bool isLessThan(const string &operation);
 
-Expression* Or(Expression* left, Expression* right);
+bool isLessThanOrEqual(const string &operation);
 
-Expression* EqualOperations(Expression* left, Op* op, Expression* right);
+bool isGreaterThan(const string &operation);
 
-Expression* Casting(Type* type, Expression* expr);
+bool isGreaterThanOrEqual(const string &operation);
 
-Expression* addSub(Expression* left, Op* op, Expression* right);
+bool isEqual(const string &operation);
 
-Expression* mulDiv(Expression* left, Op* op, Expression* right);
+bool isNotEqual(const string &operation);
 
+Expression *id_to_Exp(const std::string &name);
 
-Call* expressionToCall(const std::string& name, Expression* expr);
+Expression *call_to_Exp(Call *call);
+
+Expression *Not(Expression *expr);
+Expression *And(Expression *left, Expression *right);
+
+Expression *Or(Expression *left, Expression *right);
+
+Expression *EqualOperations(Expression *left, Op *op, Expression *right);
+
+Expression *Casting(Type *type, Expression *expr);
+
+Expression *addOrSub(Expression *left, Op *op, Expression *right);
+
+Expression *mulDiv(Expression *left, Op *op, Expression *right);
+
+Call *expressionToCall(const std::string &name, Expression *expr);
 #endif

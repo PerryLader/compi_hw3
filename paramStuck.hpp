@@ -8,23 +8,29 @@
 #include "hw3_output.hpp"
 using namespace std;
 
-class parmStack{
+class parmStack
+{
     void addGlobalScope();
-    void checkType(const string& type, Expression* expr);
+    void checkType(const string &type, Expression *expr);
+
 public:
-    vector<Symtab*> m_symtabs;
+    vector<Symtab *> m_symtabs;
     stack<int> m_offsetsStuck;
 
-    parmStack(){
+    parmStack()
+    {
         m_offsetsStuck.push(0);
         addGlobalScope();
     }
 
     void addScope();
     void popAndPrintScope();
-    Symbol* addNewSymbolNoExp(const string& type, const string& name);
-    Symbol* addNewSymbolWithExp(const string& type, const string& name, Expression* value);
-    Symbol* findSymbol(const string& name);
-    void assignToSymbol(const string& name, Expression* val);
+    Symbol *addNewSymbolNoExp(const string &type, const string &name);
+    Symbol *addNewSymbolWithExp(const string &type, const string &name, Expression *value);
+    Symbol *findSymbol(const string &name);
+    void assignToSymbol(const string &name, Expression *val);
+
+private:
+    void rememberToRemove();
 };
 #endif

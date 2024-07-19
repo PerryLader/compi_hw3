@@ -1,5 +1,4 @@
-2a3,6
-> ---end scope---
-> print (STRING)->VOID 0
-> printi (INT)->VOID 0
+5d4
+< readi (INT)->INT 0
+6a6
 > readi (INT)->INT 0

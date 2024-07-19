@@ -8,19 +8,17 @@ using namespace std;
 namespace output
 {
     void endScope();
+    void errUnexpectedCont(int lineno);
+    void errByteTooBig(int lineno, const string &value);
     void printID(const string &id, int offset, const string &type);
-    string makeFunctionType(const string& argType, const string& retType);
-
     void errorLex(int lineno);
     void errorSyn(int lineno);
-    void errorUndef(int lineno, const string &id);
-    void errorDef(int lineno, const string &id);
-    void errorUndefFunc(int lineno, const string &id);
-    void errorMismatch(int lineno);
-    void errorPrototypeMismatch(int lineno, const string &id, const string &type);
-    void errorUnexpectedBreak(int lineno);
-    void errorUnexpectedContinue(int lineno);
-    void errorByteTooLarge(int lineno, const string &value);
+    void errUndefind(int lineno, const string &id);
+    void errDefined(int lineno, const string &id);
+    void errUndefinedFunction(int lineno, const string &id);
+    void errMsmatch(int lineno);
+    void errProtoMismatch(int lineno, const string &id, const string &type);
+    void errUnexpectedBrk(int lineno);
 }
 
 #endif

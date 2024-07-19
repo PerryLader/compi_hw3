@@ -68,14 +68,14 @@ Statement:
     | ID ASSIGN Exp SC {parm_stack.assignToSymbol($1->m_value, dynamic_cast<Expression*>($3));}
     | Call SC %prec Max_Priority {;}
 
-    | BREAK SC {isLegalBreak(whileCounter);}
-    | CONTINUE SC {isLegalContinue(whileCounter);}
+    | BREAK SC {isLegalToBreak(whileCounter);}
+    | CONTINUE SC {isLegalToCont(whileCounter);}
 ;
 AddScope:              {parm_stack.addScope();}
 
 CloseScope:            {parm_stack.popAndPrintScope();}
 
-BoolExp:        Exp {isBool(dynamic_cast<Expression*>($1)); $$ = $1;}
+BoolExp:        Exp {isBoolean(dynamic_cast<Expression*>($1)); $$ = $1;}
 
 Call: ID LPAREN Exp RPAREN {$$ = expressionToCall($1->m_value, dynamic_cast<Expression*>($3));};
 
@@ -86,7 +86,7 @@ Type:
 ;
 
 Exp:  LPAREN Exp RPAREN %prec LOW_PREC_PAREN_EXP {$$ = $2;}
-     | Exp MINUS_PLUS Exp {$$ = addSub(dynamic_cast<Expression*>($1), dynamic_cast<Op*>($2), dynamic_cast<Expression*>($3));}
+     | Exp MINUS_PLUS Exp {$$ = addOrSub(dynamic_cast<Expression*>($1), dynamic_cast<Op*>($2), dynamic_cast<Expression*>($3));}
      | Exp DIV_MUL Exp {$$ = mulDiv(dynamic_cast<Expression*>($1), dynamic_cast<Op*>($2), dynamic_cast<Expression*>($3));}
      | ID {$$ = id_to_Exp($1->m_value);}
      | Call {$$ = call_to_Exp(dynamic_cast<Call*>($1));}

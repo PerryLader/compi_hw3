@@ -2,10 +2,11 @@
 #define _SYMTAB_HPP
 
 #include "Node.hpp"
-#include <stack>
-#include <vector>
 #include <algorithm>
 #include <iostream>
+#include <stack>
+#include <vector>
+
 using namespace std;
 
 class Symtab{    
@@ -13,8 +14,8 @@ public:
     std::vector<Symbol*> m_symbols;
     Symtab();
     ~Symtab();
-    Symbol* addToSymTab(const string& type, const string& name, const string& value, int offset);
-    Symbol* addFuncToSymTab(const string& type, const string& name, const string& returnValue);
+    Symbol* addToSymbolTable(const string& m_type, const string& m_name, const string& m_value, int offset);
+    Symbol* addFuncToSymbolTable(const string& m_type, const string& m_name, const string& retVal);
     void printAllParam();
 };
 
